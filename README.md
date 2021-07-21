@@ -8,7 +8,7 @@
 >>>>讀取後輸出
 >>>>回到輸入事項
 
-使用過則直接輸出紀錄，後輸入事項  
+>使用過則直接輸出紀錄，後輸入事項  
 
 
 
@@ -16,14 +16,17 @@
    
 
 
+
+
+
+
 ---
-函數                                 | 參數      |     回傳類型 | 執行             | 呼叫
----- | ---- | ---- | ---- | ----
-cCountry::cCountry()                | _            | 建構函數 | 設定第一人感染     | f()  
-cCountry::f()                       | _            | Void    | 處理向量及決定座標 | _  
-cCountry::RandomInfect()            | _            | Void    | 抓人感染         | InfectAnother(cHuman*, int), makep(double, double, double)  
-cHuman::InfectAnother(cHuman*, int) | 第二人, 第幾天 | bool    | 以隨機決定是否感染 | _  
-cCountry::Tomorrow()                | _            | Void    | 時間和參數變異推進 | muta(), Died(int)  
-cHuman::Died(int)                   | 第幾天        | bool    | 決定是否死亡      | VirusLevel(int)  
-cHuman::VirusLevel(int)             | 第幾天        | double  | 回傳病毒數值      | _  
+函數                                 | 參數      | 執行             | 呼叫
+---- | ---- | ---- | ----
+calendar::calendar()       | 建構函數 | 抓取當天時間    | -  
+calendar::window(int[], int[])                       | 任務日期            | 輸出畫面 | nextmonth(int*, int*, int*,int)  
+calendar::newtask(tm*)	            |當天時間   | 輸入事項內容        | recall(), save(int, int, char[], char[], char[])
+calendar::recall() | _ | 讀取記錄檔案 | window(int[], int[])  
+calendar::save(int, int, char[], char[], char[])          | 任務日期、內容  | 存入記錄檔案 | _ 
+calendar::nextmonth(int*, int*, int*,int)        |_       | 調整月份推進      |_
 
