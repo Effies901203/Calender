@@ -43,7 +43,6 @@ public:
     void save(int, int, char[], char[], char[]);
     void nextmonth(int*, int*, int*, int);
     void lastmonth(int*, int*, int*, int);
-    void remember(int, char[]);
     char task1[7][50];
     char task2[7][50];
     char task3[7][50];
@@ -99,6 +98,7 @@ void calender::window(int mo[2], int da[7]){
             break;
         }
     }
+    printf("\n░2021░\n");
     for(int i=0;i<7;i++)
     {
         if(i==3)printf(" Thur.|");
@@ -140,7 +140,7 @@ void calender::save(int m, int d, char task1[50], char task2[50], char task3[50]
     if((f2=fopen("record.txt", "a+"))==NULL)
         printf("Cannot Write The File.");
     if((i=fscanf(f2,"%d %d", &m, &d))!=2)
-        fprintf(f2,"%d %d %s %s %s", m, d, task1, task2, task3);
+        fprintf(f2,"\n%d %d %s %s %s", m, d, task1, task2, task3);
     if((i=fscanf(f2,"%d %d", &m, &d))==2)
         fprintf(f2,"%s %s %s",task1, task2, task3);
     fclose(f2);
